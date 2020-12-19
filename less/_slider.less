@@ -1,0 +1,163 @@
+.slider_column {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    min-height: 408px;
+    min-width: 498px;
+    min-height: 533px;
+    overflow: hidden;
+  }
+.slider_list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: transform 0.4s;
+  }
+
+  .slider_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .slider_img {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .slider_pic {
+    display: none;
+  }
+
+  .slider_list--big {
+    top: 0;
+    bottom: 117px;
+
+    .slider_item {
+      width: 100%;
+    }
+  }
+
+  .slider_list--small {
+    bottom: 0;
+    height: 117px;
+
+    .slider_item {
+      width: 20%;
+    }
+
+    .slider_img:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .card_video {
+    max-width: none;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .active {
+    z-index: 1;
+    outline: 2px solid #EDE300;
+    box-sizing: border-box;
+    border-radius: 2px;
+
+    .slider_img {
+      filter: brightness(50%);
+    }
+  }
+
+  .all_screen {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: 38px;
+    z-index: 2;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .arrow--left {
+    left: 12px;
+  }
+
+  .arrow--right {
+    right: 12px;
+  }
+
+  .fullscreen {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    .wrap_slider {
+      //max-width: 1070px;
+      //max-height: 1024px;
+      height: 100%;
+      overflow: hidden;
+      animation: showForm 0.4s;
+    }
+
+    .all_screen {
+      display: none;
+    }
+
+    .fullscreen_close {
+      display: flex;
+    }
+
+    .slider_list--small {
+      display: none;
+    }
+
+    .slider_list--big {
+      bottom: 0;
+    }
+
+    .slider_item {
+      align-items: center;
+    }
+
+    .slider_img {
+      display: none;
+    }
+
+    .slider_pic {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .fullscreen--anim {
+    .wrap_slider {
+      //animation: hideForm 0.4s;
+    }
+  }
+.wrap_slider{
+    max-width: 498px;
+    
+}

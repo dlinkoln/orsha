@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Orsha | Map</title>
+</head>
+
+<body class="darkTheme_page map_page">
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="container">
+        <div class="row mx-md-auto ">
+          <div class="col-xl-6 col-lg-6 col-md-7 col-sm-6 col-6">
+            <div class="nav">
+              <div class="nav__logo">
+                <img src="img/logoDark.svg" alt="">
+              </div>
+              <nav class="nav__header d-none d-lg-block d-xl-block activeH">
+                <ul>
+                  <li><a href="index.html">Главная</a></li>
+                  <li><a href="infokanal.html">Инфоканал</a></li>
+                  <li><a href="article.html">Статьи</a></li>
+                  <li><a href="map.html">Карта</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 col-md-5 col-sm-6 col-6">
+            <div class="ico-wrap">
+              <div class="header__ico">
+                <input type="text" placeholder="Введите запрос" class="header__searchInput">
+                <img src="img/ico/searchDark.svg" class="header__search" alt="">
+                <img src="img/ico/langDark.svg" class="header__lang" alt="">
+                <img src="img/ico/profileDark.svg" class="header__profile" alt="">
+                <img src="img/ico/burgerDark.svg" class="header__burger" alt="" id="header__burger">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header__mob-menu">
+      <div class="nav__header_mobile activeH ">
+        <ul>
+          <li><a href="#thems">Темы</a></li>
+          <li><a href="#obj">Объекты</a></li>
+          <li><a href="#routes">Маршруты</a></li>
+          <li><a href="#info">Инфоканал</a></li>
+          <li>
+            <div class="nav__profile_mob">
+              <img src="img/ico/langDark.svg" class="header__lang" alt="">
+              <img src="img/ico/profileDark.svg" class="header__profile" alt="">
+            </div>
+            <div class="nav__search_mob">
+              <input type="text" placeholder="Введите запрос" class="header__searchInput">
+              <img src="img/ico/searchDark.svg" class="header__search" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="srch-result">
+      <div class="srch-result__closer">
+        <img src="img/ico/exitBlack.svg" alt="">
+      </div>
+      <div class="srch-result__body">
+        <span>Результаты по запросу</span>
+        <h2>Замок</h2>
+
+        <div class="srch-result__dataset">
+          <h3>Темы</h3>
+          <p>Замки Беларуси</p>
+          <p>Архитектура Беларуси</p>
+          <p>Достопримечательности Орши</p>
+        </div>
+        <div class="srch-result__dataset">
+          <h3>Темы</h3>
+          <p>Замки Беларуси</p>
+          <p>Архитектура Беларуси</p>
+          <p>Достопримечательности Орши</p>
+        </div>
+        <div class="srch-result__dataset">
+          <h3>Темы</h3>
+          <p>Замки Беларуси</p>
+          <p>Архитектура Беларуси</p>
+          <p>Достопримечательности Орши</p>
+        </div>
+        <div class="srch-result__dataset">
+          <h3>Темы</h3>
+          <p>Замки Беларуси</p>
+          <p>Архитектура Беларуси</p>
+          <p>Достопримечательности Орши</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="map">
+    <aside class="map__aside">
+      <nav class="map__routes">
+        <ul class="map__marsh activeR">
+          <h3>Маршруты <span class="map__hide">Свернуть</span></h3>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <span>Северное кольцо <br>Щучинщины</span>
+              </div>
+              <div class="route__ico">
+                <img src="img/ico/info-strong.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/persons.jpg" alt="">
+                <span>Выдающиеся личности</span>
+              </div>
+              <div class="route__ico">
+                <img src="img/ico/info-strong.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="route route_active">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/sch-circle-south.jpg" alt="">
+                <span>Южное кольцо <br>Щучинщины</span>
+              </div>
+              <div class="route__ico" id="rCardOpener">
+                <img src="img/ico/info-strong.svg" alt="">
+              </div>
+            </div>
+            <ul class="route__subtitle">
+              <li class="route__subItem route__subItem_disabled">
+                <div class="route__data route__data_subtitle">
+                  <img src="img/sch-circle-north.jpg" alt="">
+                  <div>
+                    <span>Музей “Млын”</span>
+                    <span>Орша, пр.Независимости 37</span>
+                  </div>
+                </div>
+                <div class="route__ico route__ico_subtitle">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                </div>
+              </li>
+              <li class="route__subItem route__subItem_disabled">
+                <div class="route__data route__data_subtitle">
+                  <img src="img/park.jpg" alt="">
+                  <div>
+                    <span>Городской парк</span>
+                    <span>Щучин, пр.Победителей 23</span>
+                  </div>
+                </div>
+                <div class="route__ico route__ico_subtitle">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                </div>
+              </li>
+              <li class="route__subItem route__subItem_disabled">
+                <div class="route__data route__data_subtitle">
+                  <img src="img/park.jpg" alt="">
+                  <div>
+                    <span>Центральный детский <br>парк</span>
+                    <span></span>
+
+                  </div>
+                </div>
+                <div class="route__ico route__ico_subtitle">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                </div>
+              </li>
+              <li class="route__subItem route__subItem_disabled route__subItem_active" id="mCardOpener">
+                <div class="route__data route__data_subtitle">
+                  <img src="img/sch-circle-north.jpg" alt="">
+                  <div>
+                    <span>Музей “Млын”</span>
+                    <span>Орша, пр.Независимости 37</span>
+                  </div>
+                </div>
+                <div class="route__ico route__ico_subtitle">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                </div>
+              </li>
+              <li class="route__subItem route__subItem_disabled ">
+                <div class="route__data route__data_subtitle">
+                  <img src="img/sch-circle-north.jpg" alt="">
+                  <div>
+                    <span>Музей “Млын”</span>
+                    <span>Орша, пр.Независимости 37</span>
+                  </div>
+                </div>
+                <div class="route__ico route__ico_subtitle">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/music-route.jpg" alt="">
+                <span>Музыкальный маршрут Три ряда текста текста</span>
+              </div>
+              <div class="route__ico">
+                <img src="img/ico/info-strong.svg" alt="">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="map__obj">
+          <h3>Объекты <span class="map__hide">Свернуть</span></h3>
+          <div class="filter-ctr">
+            <div class="filter-ctr__visible">
+              <img src="img/ico/filter.svg" alt="">
+              <span>
+                Фильтрация
+              </span>
+            </div>
+            <div class="filter-ctr__body">
+              <ul>
+                <li class="filter-ctr__item">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                  <span class="filter-ctr__title">Населенный пункт</span>
+                  <span class="filter-ctr__colorball  darkBlue"></span>
+                </li>
+                <li class="filter-ctr__item">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                  <span class="filter-ctr__title">Природа</span>
+                  <span class="filter-ctr__colorball greenLight"></span>
+                </li>
+                <li class="filter-ctr__item">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                  <span class="filter-ctr__title">История , культура</span>
+                  <span class="filter-ctr__colorball beige"></span>
+                </li>
+                <li class="filter-ctr__item">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                  <span class="filter-ctr__title">Активный отдых и спорт</span>
+                  <span class="filter-ctr__colorball 
+                                    violetBright"></span>
+                </li>
+                <li class="filter-ctr__item">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                  <span class="filter-ctr__title">Рекреация и релакс</span>
+                  <span class="filter-ctr__colorball 
+                                    aqua"></span>
+                </li>
+                <li class="filter-ctr__item">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                  <span class="filter-ctr__title">Здоровье</span>
+                  <span class="filter-ctr__colorball 
+                                    green"></span>
+                </li>
+                <li class="filter-ctr__item">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                  <span class="filter-ctr__title">Питание</span>
+                  <span class="filter-ctr__colorball 
+                                     blue"></span>
+                </li>
+                <li class="filter-ctr__item">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                  <span class="filter-ctr__title">Инфраструктура</span>
+                  <span class="filter-ctr__colorball 
+                                     yellow"></span>
+                </li>
+                <li class="filter-ctr__item">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                  <span class="filter-ctr__title">Экономика и социальная сфера</span>
+                  <span class="filter-ctr__colorball 
+                                     red"></span>
+                </li>
+                <li class="filter-ctr__item">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                  <span class="filter-ctr__title">Развлечения</span>
+                  <span class="filter-ctr__colorball 
+                                     pink"></span>
+                </li>
+              </ul>
+              <div class="filter-ctr__distance">
+                <span>Расстояние от <span class="filter-ctr__city">Минска</span></span>
+                <div class="filter-ctr__range">
+                  <input type="range" value="200" min="0" max="400" class="filterRange" id="filterRange">
+                  <span class="lineImmitator"></span>
+                  <span class="filterRangeData"></span>
+                  <span class="finishDot"></span>
+                </div>
+                <button>Применить фильтры</button>
+              </div>
+            </div>
+
+          </div>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data route__data_subtitle" id="">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <div>
+                  <span>Музей “Млын”</span>
+                  <span>Орша, пр.Независимости 37</span>
+                </div>
+              </div>
+              <div class="route__ico route__ico_subtitle">
+                <label class="myCheckbox">
+                  <input type="checkbox" name="route" />
+                  <span></span>
+                </label>
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data route__data_subtitle">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <div>
+                  <span>Музей “Млын”</span>
+                  <span>Орша, пр.Независимости 37</span>
+                </div>
+              </div>
+              <div class="route__ico route__ico_subtitle">
+                <label class="myCheckbox">
+                  <input type="checkbox" name="route" />
+                  <span></span>
+                </label>
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data route__data_subtitle">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <div>
+                  <span>Музей “Млын”</span>
+                  <span>Орша, пр.Независимости 37</span>
+                </div>
+              </div>
+              <div class="route__ico route__ico_subtitle">
+                <label class="myCheckbox">
+                  <input type="checkbox" name="route" />
+                  <span></span>
+                </label>
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data route__data_subtitle">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <div>
+                  <span>Музей “Млын”</span>
+                  <span>Орша, пр.Независимости 37</span>
+                </div>
+              </div>
+              <div class="route__ico route__ico_subtitle">
+                <label class="myCheckbox">
+                  <input type="checkbox" name="route" />
+                  <span></span>
+                </label>
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data route__data_subtitle">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <div>
+                  <span>Музей “Млын”</span>
+                  <span>Орша, пр.Независимости 37</span>
+                </div>
+              </div>
+              <div class="route__ico route__ico_subtitle">
+                <label class="myCheckbox">
+                  <input type="checkbox" name="route" />
+                  <span></span>
+                </label>
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data route__data_subtitle">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <div>
+                  <span>Музей “Млын”</span>
+                  <span>Орша, пр.Независимости 37</span>
+                </div>
+              </div>
+              <div class="route__ico route__ico_subtitle">
+                <label class="myCheckbox">
+                  <input type="checkbox" name="route" />
+                  <span></span>
+                </label>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="map__theme">
+          <h3>Темы <span class="map__hide">Свернуть</span></h3>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <span>Музыкальная вечеринка</span>
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <span>Северное кольцо <br>Щучинщины</span>
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <span>Музыкальная вечеринка</span>
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <span>Северное кольцо <br>Щучинщины</span>
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <span>Музыкальная вечеринка</span>
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <span>Северное кольцо <br>Щучинщины</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="map__custom">
+          <h3>Мой Маршрут <span class="map__hide">Свернуть</span></h3>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/sch-circle-north.jpg" alt="">
+                <span>Северное кольцо <br>Щучинщины</span>
+              </div>
+              <div class="route__ico">
+                <img src="img/ico/update.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/persons.jpg" alt="">
+                <span>Выдающиеся личности</span>
+              </div>
+              <div class="route__ico">
+                <img src="img/ico/update.svg" alt="">
+              </div>
+            </div>
+          </li>
+          <li class="route route_active">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/sch-circle-south.jpg" alt="">
+                <span>Южное кольцо <br>Щучинщины</span>
+              </div>
+              <div class="route__ico">
+                <img src="img/ico/update.svg" alt="">
+              </div>
+            </div>
+            <ul class="route__subtitle">
+              <li class="route__subItem route__subItem_disabled">
+                <div class="route__data route__data_subtitle">
+                  <img src="img/sch-circle-north.jpg" alt="">
+                  <div>
+                    <span>Музей “Млын”</span>
+                    <span>Орша, пр.Независимости 37</span>
+                  </div>
+                </div>
+                <div class="route__ico route__ico_subtitle">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                </div>
+              </li>
+              <li class="route__subItem route__subItem_disabled">
+                <div class="route__data route__data_subtitle">
+                  <img src="img/park.jpg" alt="">
+                  <div>
+                    <span>Городской парк</span>
+                    <span>Щучин, пр.Победителей 23</span>
+                  </div>
+                </div>
+                <div class="route__ico route__ico_subtitle">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                </div>
+              </li>
+              <li class="route__subItem route__subItem_disabled">
+                <div class="route__data route__data_subtitle">
+                  <img src="img/park.jpg" alt="">
+                  <div>
+                    <span>Центральный детский <br>парк</span>
+                    <span></span>
+
+                  </div>
+                </div>
+                <div class="route__ico route__ico_subtitle">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                </div>
+              </li>
+              <li class="route__subItem route__subItem_disabled">
+                <div class="route__data route__data_subtitle">
+                  <img src="img/sch-circle-north.jpg" alt="">
+                  <div>
+                    <span>Музей “Млын”</span>
+                    <span>Орша, пр.Независимости 37</span>
+                  </div>
+                </div>
+                <div class="route__ico route__ico_subtitle">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                </div>
+              </li>
+              <li class="route__subItem route__subItem_disabled">
+                <div class="route__data route__data_subtitle">
+                  <img src="img/sch-circle-north.jpg" alt="">
+                  <div>
+                    <span>Музей “Млын”</span>
+                    <span>Орша, пр.Независимости 37</span>
+                  </div>
+                </div>
+                <div class="route__ico route__ico_subtitle">
+                  <label class="myCheckbox">
+                    <input type="checkbox" name="route" />
+                    <span></span>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="route">
+            <div class="route__wrapper">
+              <div class="route__data">
+                <img src="img/music-route.jpg" alt="">
+                <span>Музыкальный маршрут Три ряда текста текста</span>
+              </div>
+              <div class="route__ico">
+                <img src="img/ico/update.svg" alt="">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button class="map__customRoute" data-route="map__custom">Мой маршрут</button>
+        <button class="map__applyCustomRoute"><img src="img/ico/mill.png" alt="">создать новый маршрут</button>
+        <div class="map__ctr">
+          <button id="routes" class="btn-highlight" data-route="map__marsh">
+            <p>Маршруты</p>
+          </button><button id="obj" class="btn-highlight" data-route="map__obj">
+            <p>Объекты</p>
+          </button><button id="themes" class="btn-highlight" data-route="map__theme">
+            <p>Темы</p>
+          </button>
+        </div>
+      </nav>
+    </aside>
+    <div id="main-map" class="map__main-map">
+
+    </div>
+    <div class="qSym">
+      <img src="img/ico/qSym.svg" alt="">
+    </div>
+  </section>
+
+  <div class="locationModal">
+    <img src="img/locModal.svg" alt="">
+    <div class="locationModal__data">
+      <h3>Определить ваше местоположение
+        на карте?</h3>
+      <div class="locationModal__ctr">
+        <button id="locYes">Да</button>
+        <button id="locNo">Нет</button>
+      </div>
+    </div>
+  </div>
+  <div class="routeN modal ">
+    <img src="img/locModal.svg" alt="">
+    <div class="routeN__data">
+      <div class="routeN__exit">
+        <img src="img/ico/exitBlack.svg" alt="" class="clsModal">
+      </div>
+      <h3>
+        введите название маршрута
+      </h3>
+      <input type="text" placeholder="Введите название маршрута">
+      <button>Создать маршрут</button>
+    </div>
+  </div>
+  <div class="routeN routeN_edit modal">
+    <img src="img/locModal.svg" alt="">
+    <div class="routeN__data">
+      <div class="routeN__exit">
+        <img src="img/ico/exitBlack.svg" alt="">
+      </div>
+      <h3>
+        название маршрута
+      </h3>
+      <input type="text" placeholder="Введите название маршрута" value="Посетить в июле">
+      <button>изменить название</button>
+    </div>
+  </div>
+  <div class="midiCard">
+    <div class="midiCard__wrapper">
+      <div class="midiCard__exit">
+        <img src="img/ico/midiExit.svg" alt="" class="clsModal">
+      </div>
+      <div class="midiCard__infoWrapper">
+        <h3>Городской парк</h3>
+        <div class="midiCard__info">
+          <span class="midiCard__loc-ico">г. Орша, ул.Колесникова</span>
+          <span class="midiCard__time-ico">Время работы: круглосуточно</span>
+          <span class="midiCard__phone-ico"><a href="tel:+375297652748">+ 375 29 765-27-48</a></span>
+          <span class="midiCard__site-ico"><a href="https://citypark.by" target="_blank
+                            ">www.citypark.by</a></span>
+        </div>
+        <div class="midiCard__icons">
+          <img src="img/serv_ico/p.svg" alt="">
+          <img src="img/serv_ico/emergency.svg" alt="">
+          <img src="img/serv_ico/eatery.svg" alt="">
+          <img src="img/serv_ico/sauna.svg" alt="">
+        </div>
+        <p class="midiCard__descr">
+          Не следует, однако забывать, что начало повседневной работы по формированию позиции требуют от нас
+          анализа существенных финансовых и административных условий.
+          Таким образом реализация намеченных
+        </p>
+        <div class="midiCard__ctr">
+          <div>
+            <label class="myCheckbox">
+              <input type="checkbox" name="s" />
+              <span></span>
+            </label>
+            <img src="img/ico/plus.svg" alt="">
+          </div>
+          <button>
+            Узнать подробнее
+          </button>
+        </div>
+      </div>
+      <div class="midiCard__thumb">
+        <div class="slider_column">
+          <div class="wrap_slider">
+            <button id="arrowLeft" class="arrow arrow--left button_icon">
+              <img src="img/ico/leftArrSlider.svg" alt="" width="42" heihgt="42">
+            </button>
+            <button id="arrowRight" class="arrow arrow--right button_icon">
+              <img src="img/ico/rightArrSlider.svg" alt="" width="42" heihgt="42">
+            </button>
+            <ul id="slider" class="slider_list slider_list--big">
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+            </ul>
+            <ul id="sliderSmall" class="slider_list slider_list--small">
+              <li class="slider_item active">
+                <button class="slider_img button_icon" style="background-image: url('img/park1.jpg')"></button>
+              </li>
+              <li class="slider_item">
+                <button class="slider_img button_icon" style="background-image: url('img/park2.jpg')"></button>
+              </li>
+              <li class="slider_item">
+                <button class="slider_img button_icon" style="background-image:url('img/park3.jpg')"></button>
+              </li>
+              <li class="slider_item">
+                <button class="slider_img button_icon" style="background-image: url('img/park4.jpg')"></button>
+              </li>
+              <li class="slider_item">
+                <button class="slider_img button_icon" style="background-image: url('img/park5.jpg')"></button>
+              </li>
+              <li class="slider_item">
+                <button class="slider_img button_icon" style="background-image: url('img/park6.jpg')"></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="routeCard">
+    <div class="midiCard__wrapper midiCard__wrapper_route">
+      <div class="midiCard__exit midiCard__exit_route">
+        <img src="img/ico/exitWhite.svg" alt="" class="clsModal">
+        <img src="img/ico/exitBlack.svg" alt="" class="clsModal">
+      </div>
+      <div class="midiCard__infoWrapper midiCard__infoWrapper_route">
+        <h3>южное кольцо щучинщины</h3>
+        <p class="midiCard__descr midiCard__descr_route  ">
+          Идейные соображения высшего порядка, а также консультация с широким активом позволяет оценить
+          значение направлений прогрессивного развития. <br>
+          Разнообразный и богатый опыт консультация с широким
+          активом влечет за собой процесс внедрения и модернизации соответствующий условий активизации.
+        </p>
+        <div class="midiCard__ctr midiCard__ctr_route">
+          <button>
+            добавить в мой маршрут
+          </button>
+        </div>
+        <img class="route-card" src="img/route_card.svg" alt="">
+      </div>
+      <div class="midiCard__thumb  midiCard__thumb_route">
+        <div class="slider_column slider_column_route">
+          <div class="wrap_slider">
+            <button id="arrowLeft2" class="arrow arrow--left button_icon">
+              <img src="img/ico/leftArrSlider.svg" alt="" width="42" heihgt="42">
+            </button>
+            <button id="arrowRight2" class="arrow arrow--right button_icon">
+              <img src="img/ico/rightArrSlider.svg" alt="" width="42" heihgt="42">
+            </button>
+            <ul id="slider2" class="slider_list slider_list--big">
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+              <li class="slider_item">
+                <div class="slider_img" style="background-image: url('img/nicepark.jpg')"></div>
+                <img src="img/nicepark.jpg" alt="" class="slider_pic">
+              </li>
+            </ul>
+            <ul id="sliderSmall2" class="slider_list slider_list--small">
+              <li class="slider_item active">
+                <button class="slider_img button_icon" style="background-image: url('img/park1.jpg')"></button>
+              </li>
+              <li class="slider_item">
+                <button class="slider_img button_icon" style="background-image: url('img/park2.jpg')"></button>
+              </li>
+              <li class="slider_item">
+                <button class="slider_img button_icon" style="background-image:url('img/park3.jpg')"></button>
+              </li>
+              <li class="slider_item">
+                <button class="slider_img button_icon" style="background-image: url('img/park4.jpg')"></button>
+              </li>
+              <li class="slider_item">
+                <button class="slider_img button_icon" style="background-image: url('img/park5.jpg')"></button>
+              </li>
+              <li class="slider_item">
+                <button class="slider_img button_icon" style="background-image: url('img/park6.jpg')"></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="miniCard">
+    <div class="miniCard__header">
+      <div class="miniCard__close">
+        <img src="img/ico/exitBlack.svg" alt="">
+      </div>
+      <div class="miniCard__title">
+        Городской парк
+      </div>
+    </div>
+    <div class="miniCard__img">
+      <img src="img/nicepark-small.jpg" alt="">
+    </div>
+    <div class="miniCard__ctr">
+      <div class="miniCard__ico">
+        <img src="img/ico/infoMiniCard.svg" alt="">
+        <img src="img/ico/plus.svg" alt="">
+      </div>
+      <button class="miniCard__more">Узнать подробнее</button>
+    </div>
+  </div>
+  <div class="infoModal">
+    <div class="miniCard__close">
+      <img src="img/ico/exitBlack.svg" alt="">
+    </div>
+    <div class="midiCard__info">
+      <span class="midiCard__loc-ico">г. Орша, ул.Колесникова</span>
+      <span class="midiCard__time-ico">Время работы: круглосуточно</span>
+      <span class="midiCard__phone-ico"><a href="tel:+375297652748">+ 375 29 765-27-48</a></span>
+      <span class="midiCard__site-ico"><a href="https://citypark.by" target="_blank
+                ">www.citypark.by</a></span>
+    </div>
+  </div>
+  <script src="js/slider.js"></script>
+  <script src="js/slider2.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
